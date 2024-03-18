@@ -1,112 +1,163 @@
 import Image from "next/image";
 
+// sidebar
+import logo from "../public/dua-logo.svg";
+import { FaHandHoldingHeart } from "react-icons/fa";
+import { FiHome } from "react-icons/fi";
+import { MdOutlineDashboard } from "react-icons/md";
+import { IoBulbOutline } from "react-icons/io5";
+import { IoBookmarkOutline } from "react-icons/io5";
+import { RiMedicineBottleLine } from "react-icons/ri";
+import { IoChatbubbleOutline } from "react-icons/io5";
+import { IoBookOutline } from "react-icons/io5";
+
+// Navbar
+import { IoIosSearch } from "react-icons/io";
+import { MdOutlineArrowDropDown } from "react-icons/md";
+import profile from "../public/profile.svg"
+
+// settings
+import { HiOutlineLanguage } from "react-icons/hi2";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex gap-6 min-h-screen  bg-[#F7F8FA] p-10 pb-0 ">
+      {/* sidebar  */}
+      <div className="fixed w-full  bottom-0 left-0 z-10 md:static md:pb-10 md:w-auto shadow-sm">
+        <div className="flex flex-row md:flex-col items-center justify-center md:justify-between md:h-full bg-white text-black w-full md:w-[100px] p-4 rounded-3xl rounded-b-none md:rounded-b-3xl ">
+          <div className="hidden md:block">
+            <Image src={logo} />
+          </div>
+          <ul className="flex flex-row justify-between gap-6 w-full items-center md:flex-col">
+            <li className="bg-[#e8f0f5] p-2 rounded-full hover:scale-105"><FiHome size={24} className="text-[#898A8A] font-medium" /></li>
+            <li className="bg-[#e8f0f5] p-2 rounded-full hover:scale-105"><MdOutlineDashboard size={24} className="text-[#898A8A] font-medium" /></li>
+            <li className="bg-[#e8f0f5] p-2 rounded-full hover:scale-105"><IoBulbOutline size={24} className="text-[#898A8A] font-medium" /></li>
+            <li className="bg-[#e8f0f5] p-2 rounded-full hover:scale-105"><IoBookmarkOutline size={24} className="text-[#898A8A] font-medium" /></li>
+            <li className="bg-[#e8f0f5] p-2 rounded-full hover:scale-105"><RiMedicineBottleLine size={24} className="text-[#898A8A] font-medium" /></li>
+            <li className="bg-[#e8f0f5] p-2 rounded-full hover:scale-105 hidden md:block"><IoChatbubbleOutline size={24} className="text-[#898A8A] font-medium" /></li>
+            <li className="bg-[#e8f0f5] p-2 rounded-full hover:scale-105 hidden md:block"><IoBookOutline size={24} className="text-[#898A8A] font-medium" /></li>
+
+          </ul>
+          <div className="hidden md:block bg-green-500 p-4 rounded-lg">
+            <FaHandHoldingHeart size={24} className="text-white" />
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <div className="w-full text-black  overflow-y-hidden">
+        <nav className="w-full grid gap-6 grid-cols-12 items-center">
+          <h4 className="font-semibold col-span-2 text-[24px]">Dua Page</h4>
+          <div className="col-span-8 flex justify-end pr-4 relative">
+            <input type="text" className="focus:outline-green-500 rounded-lg w-[40%] py-3 px-4 text-base bg-white shadow-sm" placeholder="Search by Dua Name" />
+            <div className="absolute top-1 rounded-lg right-[18px] py-2 px-4 bg-[#F3F4F6]">
+              <IoIosSearch size={24} />
+            </div>
+          </div>
+          <div className="flex justify-end items-center gap-1 col-span-2">
+            <Image src={profile} />
+            <MdOutlineArrowDropDown size={24} className="text-[#868686]" />
+          </div>
+        </nav>
+        <div className="grid grid-cols-12 mt-6 gap-6 overflow-hidden">
+          {/* category  */}
+          <div className="bg-white rounded-3xl col-span-3  h-[80vh] overflow-hidden relative">
+            <div className="text-center bg-[#1FA45B] text-white py-4 rounded-t-3xl">
+              Categories
+            </div>
+            <div className="flex px-4 py-3 relative">
+              <div className="absolute top-4 rounded-lg  py-2 px-4">
+                <IoIosSearch size={24} />
+              </div>
+              <input type="text" className="focus:outline-green-500 rounded-lg py-3 px-4 pl-12 w-full border border-gray-300 text-base bg-white shadow-sm" placeholder="Search by Dua Name" />
+            </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            {/* category items */}
+            <div className="px-4 space-y-4 pb-48 h-full overflow-y-scroll">
+              {
+                Array(8).fill(1).map((i, j) => <div key={j} className="">
+                  {/* header  */}
+                  <div className="flex items-center justify-between p-4 rounded-xl hover:bg-[#E8F0F5] group">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-[#CFE0E5]  p-3 rounded-xl">
+                        <Image src='https://duaruqyah.com/assets/icon/duar_gurutto.svg' width='40' height='40' />
+                      </div>
+                      <div>
+                        <span className="text-black font-medium">name</span>
+                        <br />
+                        <span className="text-[#7E7E7E] text-xs">subcat</span>
+                      </div>
+                    </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                    <div className="border-l group-hover:border-l-0 pl-4 text-center">
+                      <span>21</span><br />
+                      <span className="text-[#7E7E7E] text-xs">
+                        Duas
+                      </span>
+                    </div>
+                  </div>
+                  {/* subcategory */}
+                  <div className="border-l-2 border-l-[#1FA45B] border-dotted ml-12 space-y-4 pb-2 ">
+                    <div className="before:inline-block before:w-3.5 before:h-2.5 before:p-0.5 before:rounded-full before:bg-[#1FA45B] before:mt-2 before:-ml-1.5 flex items-start">
+                      <p className="pl-4 text-sm" >The servant is dependent on his  Lord #1Lord #1Lord #1Lord #1</p>
+                    </div>
+                    <div className="before:inline-block before:w-3.5 before:h-2.5 before:p-0.5 before:rounded-full before:bg-[#1FA45B] before:mt-2 before:-ml-1.5 flex items-start">
+                      <p className="pl-4 text-sm" >The servant is dependent on his  Lord #1Lord #1Lord #1Lord #1</p>
+                    </div>
+                    <div className="before:inline-block before:w-3.5 before:h-2.5 before:p-0.5 before:rounded-full before:bg-[#1FA45B] before:mt-2 before:-ml-1.5 flex items-start">
+                      <p className="pl-4 text-sm" >The servant is dependent on his  Lord #1Lord #1Lord #1Lord #1</p>
+                    </div>
+                    <div className="before:inline-block before:w-3.5 before:h-2.5 before:p-0.5 before:rounded-full before:bg-[#1FA45B] before:mt-2 before:-ml-1.5 flex items-start ">
+                      <p className="pl-4 text-sm" >Shelter from horror, misery, evil consequences and rejoicing of the enemy</p>
+                    </div>
+                  </div>
+                </div>)
+              }
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+              <div className="bg-white py-8 w-full absolute left-0 bottom-0">
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+              </div>
+            </div>
+          </div>
+
+          {/* duas  */}
+          <div className="col-span-7 bg-orange-500 h-[88vh] overflow-y-scroll">
+            2
+          </div>
+
+          {/* setting  */}
+          <div className="bg-white rounded-3xl h-[80vh] col-span-2">
+            <div className="text-center text-black text-[20px] py-8">
+              Settings
+            </div>
+            <div className="px-4 space-y-4">
+              <div className="flex gap-4 items-center p-2 bg-[#F7F8FA] rounded-lg">
+                <div className="bg-[#e8f0f5] p-2 rounded-full">
+                  <HiOutlineLanguage size={16} />
+                </div>
+                <span className="text-sm text-[#868686]">Language Settings</span>
+              </div>
+              <div className="flex gap-4 items-center p-2 bg-[#F7F8FA] rounded-lg">
+                <div className="bg-[#e8f0f5] p-2 rounded-full">
+                  <HiOutlineLanguage size={16} />
+                </div>
+                <span className="text-sm text-[#868686]">Language Settings</span>
+              </div>
+              <div className="flex gap-4 items-center p-2 bg-[#F7F8FA] rounded-lg">
+                <div className="bg-[#e8f0f5] p-2 rounded-full">
+                  <HiOutlineLanguage size={16} />
+                </div>
+                <span className="text-sm text-[#868686]">Language Settings</span>
+              </div>
+              <div className="flex gap-4 items-center p-2 bg-[#F7F8FA] rounded-lg">
+                <div className="bg-[#e8f0f5] p-2 rounded-full">
+                  <HiOutlineLanguage size={16} />
+                </div>
+                <span className="text-sm text-[#868686]">Language Settings</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </main>
   );
