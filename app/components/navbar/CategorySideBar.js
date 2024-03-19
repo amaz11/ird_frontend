@@ -67,7 +67,7 @@ const CategorySideBar = () => {
 
                     {isLoading ? Array(10).fill(1).map((i, j) => <CategoryLoading key={j} />) : category?.map((item, j) => <div key={item.id} className="">
                         {/* header  */}
-                        <div onClick={() => { setActiveCategory(item.id); setCategoryID(item.cat_id) }} className={`flex items-center justify-between p-4 rounded-xl hover:bg-[#E8F0F5] ${activeCategory === item.id ? "bg-[#E8F0F5]" : ""} group`}>
+                        <div onClick={() => { setActiveCategory(item.id); setCategoryID(item.cat_id) }} className={`flex items-center justify-between p-4 rounded-xl hover:bg-[#E8F0F5] ${activeCategory === item.id ? "bg-[#E8F0F5]" : ""} group cursor-pointer`}>
                             <div className="flex items-center gap-4">
                                 <div className="bg-[#CFE0E5]  p-3 rounded-xl">
                                     <Image src='https://duaruqyah.com/assets/icon/duar_gurutto.svg' width='40' height='40' alt='dualogo' />
