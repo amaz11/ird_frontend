@@ -27,7 +27,7 @@ const CategorySideBar = () => {
             setCategory(dataCat)
             setSubCategory(dataSubCat)
             setActiveCategory(dataCat[0].id)
-            router.push(`?cat_id=${dataCat[0].cat_id}`)
+            router.push(`/?cat_id=${dataCat[0].cat_id}`)
         } catch (error) {
             alert(error)
         } finally {
