@@ -26,7 +26,7 @@ export default function Home({ searchParams }) {
           {/* duas  */}
 
           <Suspense fallback={<Loading />}>
-            <Dua catId={searchParams.cat_id || 1} />
+            <Dua catId={searchParams.cat_id} />
           </Suspense>
 
           {/* setting  */}
